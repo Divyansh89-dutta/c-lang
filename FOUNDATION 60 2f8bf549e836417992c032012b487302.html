@@ -1,0 +1,792 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>FOUNDATION 60</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f8bf549-e836-4179-92c0-32012b487302" class="page sans"><header><h1 class="page-title">FOUNDATION 60</h1><p class="page-description"></p></header><div class="page-body"><h1 id="21a28b70-d26b-47e3-9583-5569fbdf256a" class="">BASICS </h1><p id="003b7273-7032-4f48-bd8a-5e9cde0ae8d1" class="">
+</p><ol type="1" id="a4a93300-ce1f-4794-a6dc-bed3e362a9bc" class="numbered-list" start="1"><li>Print Hello World !!</li></ol><p id="2cbf5285-1557-42e6-9e60-360fa1dc984c" class="">
+</p><ol type="1" id="633f6b89-a942-4960-9cc9-a5c2b9a0ce26" class="numbered-list" start="2"><li>Write a  program that prints the perimeter of a rectangle to take its height and width as input<p id="10ab82ef-22eb-403f-8fdc-e07d7bb95c49" class="">[Perimeter = 2 * (Height + Width) </p><p id="7ada85e3-e5e6-4774-9211-41ec39a07c09" class="">Sample Input → Height : 10</p><p id="9cda86c5-6273-436d-b954-44b82f3c7880" class="">Sample Input → Width : 15</p><p id="9be44d31-e63c-4a3a-bd16-242725c81e9d" class="">Sample Output → Perimeter of the rectangle is  50                                   </p></li></ol><p id="80d3f3aa-fedc-49b2-8c73-eecc17497388" class="">
+</p><ol type="1" id="89782e49-0d0a-4a9e-a96c-8c72c73c7bd5" class="numbered-list" start="3"><li>Write a  program to compute the perimeter and area of a circle with a given radius<p id="9be85841-a220-4b3a-adf0-407c9823ab84" class="">[Perimeter = 2 *  π * r] [Area = π * r ^ 2  ]  ]</p><p id="d60c3322-2799-4807-8dd2-a05711dda747" class="">Sample Input → Radius :</p><p id="d0d342f4-1a40-476f-b973-ee434abdef42" class="">Sample Output → Perimeter of the circle is</p><p id="bbdf92bb-bdd4-4831-948d-485d34ba4436" class="">Sample Output → Area of the circle is  </p></li></ol><p id="c17d7a7a-3770-42b2-9c64-c9dea5e7b0fb" class="">
+</p><ol type="1" id="508fc520-e8ca-4213-95af-8e042df50de9" class="numbered-list" start="4"><li>Write a  program to find the Area of Triangle given Base and Height<p id="9cde505e-ed3b-4ac1-8333-d3be846350d4" class="">[Area = 0.5 * Base * Height ]</p><p id="0114dd91-47f6-45d0-972d-bdde75d4af0c" class="">Sample Input → Height : 10 </p><p id="f8eca85d-65d7-47ee-b4da-38e7594b56d5" class="">Sample Input → Base : 15</p><p id="004bcaa4-801f-4fd2-a38c-4e2c63f2a6ca" class="">Sample Output → Area of the rectangle is 50</p></li></ol><p id="51ca1d94-1b26-4d49-8fb8-afc0eeaed2ff" class="">
+</p><ol type="1" id="37348a84-2282-42a4-b922-09a0bc5d030f" class="numbered-list" start="5"><li>Create a program that converts temperatures from Celsius to Fahrenheit<p id="d74c8f75-8da4-4079-b30e-169c869d8f85" class="">[ Fahrenheit= ( Celsius * 9 / 5) + 32 ]</p><p id="10cc2308-9904-4b36-b10f-bae50f765258" class="">Sample Input → Celsius  : 36</p><p id="7981181c-e9e1-4f95-9901-037524c9c511" class="">Sample Output → Fahrenheit : 96.8</p></li></ol><p id="befeb0c2-6813-491d-ae9d-6102ec30a0d7" class="">
+</p><ol type="1" id="06c6a599-e059-4474-a696-8f8283d5a067" class="numbered-list" start="6"><li>Write a  program that converts kilometers per hour to miles per hour<p id="6abdd21d-eaf6-4e1d-9f49-40369659eb16" class="">[Miles per hour (mph) = Kilometers per hour (kmph) * 0.621371 ]</p><p id="6b82a805-61d9-4a71-a30d-5f7a5532d4ce" class="">Sample Input → Kmph  : 50</p><p id="e13f5b82-c3f4-4e6e-b2d8-482615a4a0bf" class="">Sample Output → Mph : 31.0686</p><p id="9c397d5b-a391-4e6d-8cfd-1cd14a0ac048" class="">
+</p></li></ol><ol type="1" id="581f032a-faa1-4e85-bf9a-b19112ecc69d" class="numbered-list" start="7"><li> <ol type="a" id="debe1a9c-32eb-431b-8155-01d8a574bbc0" class="numbered-list" start="1"><li> Write a  program that takes hours and minutes as input, and calculates the total number
+of minutes<p id="941594d0-4079-440d-9ff3-199a20da657e" class="">Sample Input → Hours : 5</p><p id="52771f50-8c33-49a5-bea9-ea3961e4e0e0" class="">Sample Input → Minutes : 37</p><p id="646c7f53-8db0-4fcc-9fdd-e489fc31c9b7" class="">Sample Output → 337 minutes</p></li></ol><ol type="a" id="02a8e7c3-176c-4226-9cb7-0ce0f7fddd75" class="numbered-list" start="2"><li>Write a program  that takes minutes as input, and display the total number of hours a minutes<p id="1cef38f5-b593-4abc-ab67-50ab9a417cbd" class="">Sample Input → Minutes : 546</p><p id="43456033-a0b8-440b-96f6-81be357c889c" class="">Sample Output → 9 Hours, 6 Minutes 
+          </p></li></ol></li></ol><ol type="1" id="9e056623-ff50-482e-ae6a-d3c8400566ee" class="numbered-list" start="8"><li>Design a program that calculates the simple interest based on user-provided principal, rate, and time<p id="4519ac67-6dd4-4e09-8aaf-e7cb19b9395e" class="">[ Simple Interest = ( Principal x Interest x Time )/ 100  ]</p><p id="561ed0d4-2466-400f-aa2a-7435668e6763" class="">
+</p><p id="5fb7c0dc-637a-4cee-99d1-cd37cc202570" class="">
+</p></li></ol><ol type="1" id="f8bb5426-e7ba-4e4c-9e9c-9468c1ab3bcc" class="numbered-list" start="9"><li> <ol type="a" id="4aad14bb-3f29-438b-98f2-97bf9d8dd653" class="numbered-list" start="1"><li> Accept two numbers from user and swap their values </li></ol><ol type="a" id="719f051d-3b2a-4df6-87ae-855c2bbc0adf" class="numbered-list" start="2"><li> Accept two numbers from user and swap their values without using third variable<p id="f73bd280-f165-465f-975d-fb9a7f7c7e59" class="">Sample Input → a : 69</p><p id="f718296b-8201-45e6-8d0f-414d832fe3fa" class="">Sample Input → b : 96</p><p id="f8706ddd-4406-4674-9f61-9daea913e389" class="">Sample Output → a  = 96 , b = 69  </p></li></ol></li></ol><p id="dac3c4cc-f58c-4fee-9b2e-76d5a2360a31" class="">
+</p><ol type="1" id="a325cb34-d6b2-4992-a148-56506790b411" class="numbered-list" start="10"><li>Write a  program to calculate a bike’s average consumption from the given total distance (integer value) travelled (in km) and spent fuel (in litters, float number – 2 decimal points)<p id="f139385d-0f4f-4c9d-a4f3-c4c7e4671c7a" class="">[ Average =   Total Distance  / Fuel Consumed ]</p><p id="465ea414-de5e-4c3e-a858-09c930925685" class="">Sample Input → Fuel Consumed  : 5              </p><p id="645169a8-7d73-49d6-ab56-d9a54ca70b8a" class="">Sample Input → Total Distance  : 350                                                                                                                                                                                                                                                                 </p><p id="a11abfd0-503b-48c3-beb7-4574abdc2b0e" class="">Sample Output → Average ⇒ 70</p><p id="c9cce5ff-18fb-4026-8fb6-81a8bdc9547c" class="">
+</p></li></ol><h1 id="054fbabb-fcda-4226-b4a6-49cfa64f7f9b" class="">CONDITIONAL</h1><p id="9e5a551c-3a55-4840-92ce-8cdb7bc5da87" class="">
+</p><ol type="1" id="7ab7da91-0de9-40e0-91bf-8de7a7d75326" class="numbered-list" start="11"><li>Write a  program to accept two integers and check whether they are equal or not<p id="6e9b0fa8-05d0-4128-ada7-82cfc4f6e3ef" class="">
+</p><p id="359390ff-6381-4e3b-8858-69d19833ec0e" class="">Case 1 : </p><p id="dfb797f2-ba96-47f7-8209-d368c4c79916" class="">              Sample Input → a : 69</p><p id="cd041d45-39a0-448e-be30-06a2418243ec" class="">              Sample Input → b:  69</p><p id="e9ecb603-e5b1-466b-b57f-f8a7fa12ebcb" class="">              Sample Output → Equal</p><p id="6c1a3021-896b-4e06-a837-688b106353fa" class="">
+</p><p id="1e872cc2-179e-45e4-b5c1-55b293ca33fa" class="">Case 2 :<div class="indented"><p id="ee55f694-27aa-4ed0-8a40-0edb5fc6d3c4" class="">        Sample Input → a : 69</p><p id="24347f9a-77b2-4b3e-8043-231c8500b7e7" class="">        Sample Input → b : 96   </p><p id="db841bba-3729-4a50-98e9-1e55ebfb5ad8" class="">        Sample Output → Not Equal                      </p></div></p><p id="f7619db8-83a1-4511-bfae-b7147dbedbe4" class="">
+</p></li></ol><ol type="1" id="41b51bed-e58b-4f3c-b228-9869a2ca6ab2" class="numbered-list" start="12"><li>Write a  program to find whether a given year is a leap year or not<p id="572c0356-35cf-470c-b728-a65d4297a346" class="">
+</p><p id="ea1f19a8-9752-450f-81f4-882192f9b177" class="">Case 1 :<div class="indented"><p id="c1554f6c-8a9d-4f03-9210-c1438c8147c5" class="">Sample Input → 2024</p><p id="ab13b298-9879-47f8-ae67-e642e3880b54" class="">Sample Output → Leap Year</p><p id="629e6060-ae11-4da3-8625-72b09bf2d192" class="">
+</p></div></p><p id="218d4370-52f9-4b06-921d-1da131169ed7" class="">Case 2 :<div class="indented"><p id="43fa57ab-0314-4cf9-91d9-598d77f5e1d3" class="">Sample Input → 2024</p><p id="39ba29f0-5def-48e9-96b0-43bfa6f2b460" class="">Sample Output → Leap Year</p><p id="a4e0fb8c-3cf8-407f-afb3-ba1dd6874c9a" class="">
+</p></div></p></li></ol><ol type="1" id="c2bbd468-ce7b-4225-86ae-f82b1bfbdb73" class="numbered-list" start="13"><li>Write a program to find the largest among three numbers <p id="bf52af4c-146e-4dd2-ae11-3191d9fe753a" class="">Sample Input → a : 1</p><p id="456fc3a9-16ec-4733-94ec-d17219cbfe7f" class="">Sample Input → b : 12</p><p id="7094a51d-c19b-42be-bfc0-382377fd8c93" class="">Sample Input → c : 56</p><p id="9f6636d3-50b9-4c44-8821-0743bb422ea4" class="">Sample Output → C is the largest</p><p id="5b62be16-7785-4d50-bc88-e10f3e3b8a9a" class=""> </p></li></ol><ol type="1" id="9747205b-6d94-49b4-bde0-0d6132363ee1" class="numbered-list" start="14"><li>Write a  program to check whether a given number is positive or negative and also check whether the given number is even or odd                                                                                                        <p id="716bf329-88d9-4b16-a790-c34ed7b4fefa" class="">Sample Input → a : 12</p><p id="2507f51b-c6d6-47e9-954a-880d6723355f" class="">Sample Output → Positive and Even</p><p id="c14ffc5e-412d-4507-ae76-dc37c85530f2" class=""> </p></li></ol><ol type="1" id="a855042f-ff17-4429-bd43-5657a1b9a3ce" class="numbered-list" start="15"><li>Write a program to read the age of a candidate and determine whether it is eligible
+for casting his/her own vote<p id="1dae3be9-e43c-430e-b0ee-e84a5d36dd8d" class="">
+</p><p id="71710be3-b599-4e6e-b05f-7981e89ac057" class="">Case 1 :                 <div class="indented"><p id="166021de-7c19-4bff-9f80-b1124da05477" class="">Sample Input → Age : 12 </p><p id="4b7780f0-8656-42d9-8828-6c9c32f8c493" class="">Sample Output → Go to home and watch pogo</p><p id="709a5aa4-0eda-4caa-be18-c894faa8235e" class="">
+</p></div></p><p id="e3db6a14-2f95-4f2e-b083-8ff6695660db" class="">Case 2 :<div class="indented"><p id="8f949e45-14db-4bf5-9c3d-05ad59048241" class="">Sample Input → Age :  19</p><p id="2325699e-477b-48c0-928f-1d1d992e8c37" class="">Sample Output → Vote for Sheryians</p></div></p><p id="73c22650-e00b-4d20-94b1-2e753e4ed508" class="">
+</p></li></ol><ol type="1" id="7c62fe54-5c58-49f0-a1de-c3cf134e5988" class="numbered-list" start="16"><li>Accept marks of 4 subjects and calculate percentage if percentage is below 35% - F ,below 45% - D ,  below 55% - C , below 75% - B , above 75% - A <p id="a2f26806-7144-4634-8d1c-6ad84f8eaaad" class="">
+</p><p id="273e7c14-6820-41fa-982d-3b28f51ef224" class="">Case 1 :<div class="indented"><p id="b2daf5c9-9555-44d1-a7f2-62d74e800452" class="">Sample Input → Mathematics : 82                     </p><p id="c530782e-4b99-4afb-aa9a-67b229b58629" class="">Sample Input → Science : 96                             </p><p id="4a713182-5921-43e0-a0c4-2ee70321d70f" class="">Sample Input → English : 88                              </p><p id="c30ff26f-4122-4f46-8c0d-cae11c326c96" class="">Sample Input → Hindi : 93                                 </p><p id="86e7ebe8-701a-4bc6-aebf-348ca8bb2f0b" class="">Sample Output → A (Expectation)                      </p><p id="d447b36b-c9ba-4285-9c50-298b0a37f37f" class="">
+</p></div></p><p id="13916664-9caf-4cd6-a287-e64fe7967c38" class="">Case 2 :<div class="indented"><p id="963bb8e9-7feb-494b-829f-0387aa385b74" class="">Sample Input → Mathematics : 48</p><p id="e90cbe50-cd16-4678-bf14-cc32475eb507" class="">Sample Input → Science : 52</p><p id="37450866-146c-4544-969c-f7ba07cf021d" class="">Sample Input → English : 49</p><p id="564b5565-f30e-40e8-9a62-289dd4f0c193" class="">Sample Input → Hindi : 51</p><p id="cbb2de20-9661-45a2-8605-78d6997ae8f8" class="">Sample Output → D (Reality)</p><p id="8d10e964-3f87-4132-9e2f-80a228379fb2" class=""> </p><p id="33c90648-82be-44d5-8db7-a134d968f2a2" class="">
+</p></div></p></li></ol><ol type="1" id="031a785e-e8d1-40e6-89d1-23cffd76d992" class="numbered-list" start="17"><li>Write a program to input cost price and selling price of a product and check profit or loss<p id="8400f2d7-ed84-4c63-a960-240c9aaf261a" class="">Sample Input → Cost Price : 150</p><p id="3ddb305e-beb9-4157-8859-1fd049ed6ee4" class="">Sample Input → Selling Price : 200</p><p id="097535c8-9fe2-4581-9020-ad4fcc6ed434" class="">Sample Output → Profit  of 50</p><p id="1a7fc3e3-1164-4405-a1f9-9265cd71e042" class=""> </p></li></ol><ol type="1" id="f03f4408-b9e1-4540-a3f3-94a3f616cd31" class="numbered-list" start="18"><li>Write a program to check whether an alphabet is a vowel or a consonant.<p id="4cef6bc1-7990-4a2c-bfed-9e749c4ea8ae" class="">Case 1 :<div class="indented"><p id="985c6da9-5e8f-4541-aa29-2b2af28ecd30" class="">Sample Input → Character : A   </p><p id="37e5d524-be04-4531-bed1-25c04fde2051" class="">Sample Output → Vowel</p></div></p><p id="9e788b4f-14c2-43a8-84bd-f83c00ad4eaf" class="">Case 2 :<div class="indented"><p id="1386d591-4fbb-4068-95b7-7448997aff33" class="">Sample Input → Character : X</p><p id="873d4a61-3b4c-4f67-9ecd-59ac14212143" class="">Sample Output → Consonant</p></div></p></li></ol><ol type="1" id="bae73a57-bf50-4bad-8254-840c6e91585e" class="numbered-list" start="19"><li>Write a program to read any day number in integer and display the day name in word format.<p id="599e87a8-db8d-4630-a5d4-7394c77b5dfe" class="">Case 1 :<div class="indented"><p id="742680e0-4433-440a-919e-190f984aa7aa" class="">Sample Input →  Day : 2    </p><p id="e80186a5-f442-46b7-8fac-a72b641bc439" class="">Sample Output → Tuesday </p></div></p><p id="916684c6-6b53-4a90-a599-0e39e81646c5" class="">Case 2 :<div class="indented"><p id="40de792f-645c-475d-9c59-18ce36299fef" class="">Sample Input → Day : 4  </p><p id="e300f13c-7fef-4ea8-b1da-53cb9f1eef44" class="">Sample Output → Thursday </p></div></p><p id="7dd6c6af-3909-4f0c-8610-c5a84fa94d79" class="">
+</p><p id="2acb17a1-7dd8-483e-848c-7c6cc238421c" class="">
+</p></li></ol><ol type="1" id="a3e7263c-9ca4-4d19-a204-e3c549c8a577" class="numbered-list" start="20"><li>Write a program for reading any Month Number and displaying the Month name as a word.<p id="13a746e7-0b0d-47e7-bf6b-0ea9153f76c8" class="">Case 1 :<div class="indented"><p id="97958acc-64a3-4d75-8495-cd8ebb62c350" class="">Sample Input → Month : 3     </p><p id="6482e0e8-a2a0-467a-a88c-3b0df9eba67a" class="">Sample Output →  March   </p></div></p><p id="f9ea79cb-92a3-4f1e-b586-b271cbd0ef6b" class="">Case 2 :<div class="indented"><p id="94dabeb7-a7b0-4030-9b87-a944c443f708" class="">Sample Input → Month : 10  </p><p id="58620d46-2fec-4c63-9123-9589bc41daac" class="">Sample Output → October
+</p></div></p><p id="5d08c034-9187-43cb-9688-c895398f2d2e" class="">
+</p></li></ol><ol type="1" id="b8cc93f8-8fc4-4c6e-9345-af1db9c65591" class="numbered-list" start="21"><li>Write a program to accept the height of a person in centimeter and categorize the person
+according to their height if below 150 he is dwarf if above 150 and below 200 average and
+above 200 tall<p id="e9f9280c-0642-4c7f-a931-93f7a6438674" class="">Case 1 :<div class="indented"><p id="42ec6643-ca55-424a-8bca-92b8680644af" class="">Sample Input →  Height : 223       </p><p id="8d730738-e9ec-42cc-9143-8f05d89f686e" class="">Sample Output →  Tall guy (Lambu)     </p></div></p><p id="6d8422d1-1c49-4e0d-bf6c-f1c897077f64" class="">Case 2 :<div class="indented"><p id="e279be4e-7141-46f9-9234-03d4f8afd5b1" class="">Sample Input → Height : 143  </p><p id="d1477164-7615-4be2-93df-8fb7c4b5a655" class="">Sample Output → Chotu 2 chai lana</p></div></p><p id="accd69e8-a789-4964-825d-418a3001e470" class="">
+</p><p id="514e0385-a1e9-4585-a007-f3312dbd7736" class="">
+</p></li></ol><ol type="1" id="95792a26-c227-412f-b440-9987a4f972fa" class="numbered-list" start="22"><li>Build a Calculator which perform these operations (+ , - , / , x , %) [MINI PROJECT]<p id="0a90f7d1-fb8d-4843-8f23-9a2afefec205" class="">
+</p><p id="6aba105a-30e1-4bbe-b43e-f93c1a6e8f79" class="">Case 1 :<div class="indented"><p id="b85b36e8-b790-4401-8c8b-789374cb3ae4" class="">Sample Input →  Number 1 : 2   </p><p id="1aa90371-b0c6-45b2-9139-5490262546b8" class="">Sample Input → Operator : +</p><p id="68d689b9-4495-4ad2-b9e1-98bfa11b9ae3" class="">Sample Input → Number 2 : 8     </p><p id="b224da15-a71b-4000-96bc-50aed533300e" class="">Sample Output → Result ⇒ 2 + 8 ⇒ 10  </p><p id="c8d16d4c-250b-4385-b70a-406a83b47b28" class="">     </p></div></p><p id="d3e6d38c-b801-4ff4-8b7f-9b22789d47fb" class="">Case 2 :<div class="indented"><p id="94c0afcf-0742-4864-890f-1d591d7a65f8" class="">Sample Input → Number 1 : 10 </p><p id="53619c56-9880-4800-a3d8-fabbe594d6d3" class="">Sample Input → Operator : %</p><p id="9aecd106-7f29-403d-aa08-d643f86b7d91" class="">Sample Input → Number 2 : 2</p><p id="68c90af1-4bae-46a4-8ea6-02b9e1c80c98" class="">Sample Output → Result ⇒ 10 % 2 ⇒ 0 </p></div></p><p id="ea6e1b40-9eed-4365-9c1c-4b3191c7afc6" class="">
+</p></li></ol><p id="1d1adb14-5bd7-444c-b484-6d9b35b9516f" class=""> </p><h1 id="4846da35-36cb-46e8-9fb6-55c4764cbd19" class="">LOOPS</h1><p id="ff0b91fb-1906-410b-bde3-87e0fa6edf73" class="">
+</p><ol type="1" id="40b682f6-c155-4cdd-9f98-3d927bb361a2" class="numbered-list" start="23"><li>Write a program in C to print natural numbers up to n<p id="d0ed0615-4efe-4998-90bb-ff855cd2568e" class="">Sample Input → N : 8                                          </p><p id="7628f6b8-909a-44c3-b946-50883cddafd1" class="">Sample Output → 1 2 3 4 5 6 7 8                        </p><p id="2168e276-2bd2-4d86-b637-fff8095eb9e4" class="">
+</p></li></ol><ol type="1" id="b67279c3-3e7c-4333-8c6e-97e8a9255d1c" class="numbered-list" start="24"><li>Write a program to print the factorial of a number<p id="0f6148be-adeb-4c7b-850a-079d84c9d4da" class="">Sample Input → Number : 5                               </p><p id="8e9e5cf5-101d-4783-8f73-6be2a33634b9" class="">Sample Output → Factorial ⇒ 120                      </p><p id="352a6f91-ef46-431f-b809-ebd618a9a173" class="">
+</p></li></ol><ol type="1" id="71640d0f-d741-4b57-bf40-dd0b6eba81e2" class="numbered-list" start="25"><li>Write a program to  find the sum and average up to nth term.<p id="3699a77e-8021-4ec4-9d3b-c1b3069d13dd" class="">Sample Input → Number : 5                                 </p><p id="2509e8ac-716a-4462-8b54-74b9992e67e8" class="">Sample Output → Sum ⇒ 15 &amp; Average ⇒ 3   </p><p id="2ea6b6de-1308-433e-88d3-91f49d091095" class="">
+</p></li></ol><ol type="1" id="f7f8b1bf-96a1-4ae5-bb7c-24c5c1efbe0c" class="numbered-list" start="26"><li>Write a program to print the sum of all factors of a number<p id="70cd682d-53cd-4c09-a20d-4292cf8f5442" class="">Sample Input → Number : 12                                </p><p id="ef0b3586-dd73-4713-80e1-352fab72c94a" class="">[ Explanation : Factors of 12 = 1,2,3,4,6,12 ]         </p><p id="2e82f380-4acd-4a45-940b-15f9eaaf83d1" class="">[ Sum of Factors =1 + 2 + 3 + 4 + 6 + 12 = 28 ] </p><p id="f96a51b1-b6e2-4dbb-89db-9066235c332f" class="">Sample Output → Sum ⇒ 28                                </p><p id="2012e7eb-2027-4c6f-a798-23b943b81c24" class="">
+</p></li></ol><ol type="1" id="776d3402-0730-4124-8570-9cadfe4c1143" class="numbered-list" start="27"><li>Write a program to print the power of a raised to the power of b.<p id="0af17e15-9c45-4ed6-b8f8-5d7add64bc79" class="">Sample Input → a : 10                                         </p><p id="c47bdde8-cf6d-40a7-9653-1023c2e1415d" class="">Sample Input → b : 2                                            </p><p id="7542e6d4-b23a-4d47-8ec1-27b234334db5" class="">[ Explanation : a ^ b ⇒ 10^2 ⇒ 10*10 = 100  ]   </p><p id="a53bd2a9-d2a1-47e5-b0d8-0086c586229e" class="">Sample Output → 100                                           </p><p id="96a1cc60-d8f9-4e74-8ee1-1c7643b21c87" class="">
+</p></li></ol><ol type="1" id="65d4a5fe-5d25-48c4-aa13-77c1d5945257" class="numbered-list" start="28"><li>Write a program to print the sum of all even &amp; odd numbers separately up to n term<p id="a798465c-7165-4512-9f7f-45987f3c4f90" class="">Sample Input → n : 10                                          </p><p id="9549632f-bfd5-4f52-a2bb-7376d55afb9a" class="">[ Explanation : even  ⇒ 2,4,6,8,10  ]                    </p><p id="38a40607-20ea-4410-8196-1b9abe06400e" class="">[ Sum of even  ⇒ 2+4+6+8+10 = 30  ]                </p><p id="496c5225-8f56-4ea4-8095-1a39f4382570" class="">Sample Output → 30                                            </p><p id="6cb0c167-0ffe-47ce-bc34-ada6cd7101e0" class="">
+</p></li></ol><ol type="1" id="7307f554-7a3f-4eed-b9ea-dbedba89e664" class="numbered-list" start="29"><li>Write a program to find the prime numbers within a range of numbers<p id="eed17ac1-daee-4a98-9311-a1c9b7f8e978" class="">Sample Input → Start : 10                                            </p><p id="0b1e9ac1-9e1d-4555-9364-e5e618c18b9f" class="">Sample Input → End : 50                                            </p><p id="9c2c1980-2324-4804-828d-9f88c4def28f" class="">Sample Output → 11 , 13 , 17, 19, 23, 29, 31, 37, 41, 43, 47                                           </p><p id="8d23266d-fd9f-4967-9dbf-c08c238f1d8e" class="">
+</p></li></ol><ol type="1" id="9fd73b33-cd4f-4a88-945b-1fe2d3ec4bdc" class="numbered-list" start="30"><li>Write a program to sum of digits of a number<p id="cac36e8b-017f-4c84-bc73-d02ac6068568" class="">Sample Input → Number : 465                                            </p><p id="c7d0b32d-0508-4b9f-ace9-ebfb75c855b9" class="">[ Explanation : Sum   ⇒ 4 + 5 + 6 = 15  ]                                              </p><p id="fb9d046f-fe35-4e46-8e9e-7a45590751d9" class="">Sample Output → 15                                           </p><p id="a83560b5-45e1-4d0a-b4e5-c46e78faf11d" class="">
+</p></li></ol><ol type="1" id="51555271-dfe8-4651-9b44-4803b223417e" class="numbered-list" start="31"><li>Write a C program to print Fibonacci series up to Nth terms<p id="c187023a-78ae-4e21-aba9-f0b3cc8de80a" class="">Sample Input → N : 7                                                                                        </p><p id="1bcbcd9b-d3f4-4606-870b-532807a5c22f" class="">Sample Output → 0 1 1 2 3 5 8                                            </p><p id="2ce7fcaa-34d9-40e5-93c4-77efff72166f" class="">
+</p></li></ol><ol type="1" id="7702f72f-360c-43ff-9395-902e9662700a" class="numbered-list" start="32"><li>Write a  program to check whether a number is a palindrome or not<p id="008857b8-85bd-4553-989b-49851f0a2bef" class="">
+</p><p id="5e349753-5e2d-4609-8b33-c0ad8d447651" class="">Case 1 :<div class="indented"><p id="60209eff-58a4-4785-87c5-8fb7c09c4178" class="">Sample Input →  Number : 121            </p><p id="7d24afd4-d34e-43d8-8a9e-2d937b060e30" class="">Sample Output →  Palindromic Number    </p></div></p><p id="c885f6c5-126e-4377-8f39-a4d2197b854a" class="">Case 2 :<div class="indented"><p id="980e0d96-7f40-4a55-aa3f-4cb7b841d52b" class="">Sample Input →  Number : 123      </p><p id="c305bec8-80d6-475f-a31c-acdb0cb0c3fb" class="">Sample Output → Not a Palindromic Number</p></div></p><p id="e6def276-d632-4052-b6e1-35a2fa908a25" class="">
+</p><p id="3ba7f5cf-4238-4229-858e-85d5c4d142cc" class="">
+</p></li></ol><ol type="1" id="2f9b08b1-58ad-42bd-80ce-cceb971d0cc8" class="numbered-list" start="33"><li>Write a  program to find the LCM of two numbers<p id="66ac3ea5-bcc8-41ea-b22f-cd97844b8190" class="">Sample Input → a : 6</p><p id="4299a713-7df2-433b-a297-1f6ff35e9fe2" class="">Sample Input → b : 12</p><p id="14dd6257-7e85-4a3d-a49b-b31fb74bccdc" class="">Sample Output → The LCM of 6 &amp; 12 is 12    </p><p id="8e6c491f-53f1-45d4-b664-e55be727be8f" class="">
+</p></li></ol><ol type="1" id="7498c1de-8139-40f8-97df-c654b3d208fc" class="numbered-list" start="34"><li>Write a program  to find the sum of the series 1 +11 + 111 + 1111 + .. n terms<p id="9d12208c-4579-47c7-a077-097fa2b21f44" class="">Sample Input → n : 5      </p><p id="3b36c239-afff-4e48-9398-085721af87b6" class="">[ Explanation : Sum of the series  ⇒ 1 + 11 + 111 + 1111 + 11111 = 12345]                                              </p><p id="e8209d26-9ac6-4214-821b-1750cf76a2d9" class="">Sample Output → 12345</p><p id="7a927eda-7503-47ce-9756-82f8867ebbfa" class="">
+</p></li></ol><ol type="1" id="1072daa2-8b5f-484d-ab80-bc294f6a6d7c" class="numbered-list" start="35"><li>Write a  program to check whether a given number is a &#x27;Harshad&#x27; number or not. <p id="c130417b-e1d9-45bd-8c60-5b86716a35b4" class="">Sample Input → n : 24      </p><p id="d8534a19-c63c-4163-b124-9b11649cce8c" class="">[ Explanation : Harshad number is a number which is completely divisible by sum of its digits ]                                              </p><p id="885896fa-ec4d-48b9-ab9a-cc00e6f3ba80" class="">[ For e.g 24 , Sum of digits = 2 + 4 = 6 , 24 % 6 = 0 which means it is completely divisible ]</p><p id="a5a01c0b-70bf-4fc3-a470-eda75d0ce99e" class="">Sample Output → Yes it is a Harshad Number</p><p id="4db7f3c4-c70d-428d-8ce1-9d09763c7aec" class="">
+</p></li></ol><ol type="1" id="f0352dc3-9520-4efc-aad5-4e088ce4cb77" class="numbered-list" start="36"><li>Write a  program to check whether a given number is a &#x27;Perfect&#x27; number or not. <p id="9c551a52-a357-43ba-80ce-d4f96327ae4b" class="">Sample Input → n : 6      </p><p id="87e5c1c3-7eb9-4a0d-9875-17ef73101158" class="">[ Explanation : A number whose sum of factors(excluding number itself) is equal to  itself  ]                                              </p><p id="9994b42b-af59-4859-a1ba-21669d531687" class="">[ For e.g 6 , Sum of Factor of 6 ⇒ 1 + 2 + 3 ⇒ 6  ]</p><p id="c3a3b41a-5dc3-47b5-a5d5-3efeb56b7216" class="">Sample Output → Yes it is a Perfect Number</p><p id="5a0cb67b-5a92-4fc5-a24c-5c0d6f9bb88b" class="">
+</p></li></ol><ol type="1" id="7c5d2050-78e1-42b3-a2d8-82bf6a6ad407" class="numbered-list" start="37"><li>Write a  program to check whether a given number is an Armstrong number or not. <p id="a54b7ce1-2466-4700-8f7f-a9d403d3cf82" class="">Sample Input → n : 407      </p><p id="980cb8e9-19d2-4fa2-8fae-3233c2bc09ec" class="">[ Explanation : Sum of cube of all digits will be equal to itself]                                              </p><p id="c903fa8b-06e0-45c5-b9ee-779f1dce56d6" class="">[ For e.g 407 , Sum of cube of digits ⇒ 4^3 + 0^3 + 7^3 ⇒ 64 + 0 + 343 ⇒ 407  ]</p><p id="30c9244a-a8b0-46c4-a9ad-0df21f97396e" class="">Sample Output → Yes it is a Armstrong Number</p><p id="3b8c8f68-d1a9-41ff-bec8-d99317f1fe67" class="">
+</p></li></ol><ol type="1" id="4308e5da-3f86-4d1b-aea6-96ec4174b5e2" class="numbered-list" start="38"><li>Write a  program to check whether a number is a Strong Number or not.. <p id="b899fe6c-e4e7-4c04-99d4-9a0b29d6b0af" class="">Sample Input → n : 145      </p><p id="2161deeb-f9b2-4499-8763-77cfa27c62f6" class="">[ Explanation :Sum of factorial of each digit will be equal to the original number ]                                              </p><p id="dbe4b33b-d18b-47a5-b2aa-ed1475ce419c" class="">[ For e.g 145 , Sum of factorial of digits ⇒ 1! + 4! + 5! ⇒ 1 + 4*3*2*1 + 5*4*3*2*1  ⇒ 1 + 24 + 120 = 145  ]</p><p id="9f4e6f1a-490c-4cdf-9ffc-16cd78fce782" class="">Sample Output → Yes it is a Strong Number</p><p id="8a3e5b65-711d-41f3-be31-0cfa16e4f9f9" class="">
+</p></li></ol><p id="ea8d2004-711a-465c-8882-d133113c28e5" class="">
+</p><p id="f454cfc4-0aa0-46d8-8ad7-94b19cd22ec3" class="">
+</p><h1 id="da476a34-dd41-4dff-9021-b040007fb5a1" class="">ARRAY</h1><p id="0d3ad303-1ad9-4e62-bc23-fb170bd2bd37" class="">
+</p><ol type="1" id="43c0b793-d85b-48e2-a7aa-8a2b5dfdd0c1" class="numbered-list" start="39"><li>Write a program  to accept n elements  in an array and print it in normal order and in reverse order<p id="9f6a874f-8a3c-48df-b4da-62dc0b8b8693" class="">Sample Input → n (size of array) : 5      </p><p id="90535ad5-6c18-42b5-bfa8-bd8fc6f58f3b" class="">Sample Input → Elements of array  :  1 2 3 4 5</p><p id="e4d79f4d-ec52-45f4-91a2-36770c33c856" class="">Sample Output → Normal Order : 1 2 3 4 5</p><p id="b266ea4d-80c1-4bbb-9648-f51ae8012b78" class="">Sample Output → Reverse Order : 5 4 3 2 1</p><p id="d8cca003-76d1-49c7-8796-1b2c263d4941" class="">
+</p></li></ol><ol type="1" id="10a20cf9-1d33-44b8-81ef-c96a5d26e0db" class="numbered-list" start="40"><li>Write a program  to print positive and negative elements of an array separately .  <p id="f40d122c-ed3b-4b43-9f1f-f7b762e9c861" class="">Sample Input → n (size of array) : 5      </p><p id="c1a4eeba-a00f-4bf4-967f-9019f020a9f9" class="">Sample Input → Elements of array  :  1 -23 56 -69 36</p><p id="fc245bcf-1fff-42b9-9be2-1fd0e1f8d887" class="">Sample Output → Positive Elements : 1 56 36</p><p id="e3216f64-43a1-4a62-a24e-54f1bac4973f" class="">Sample Output → Negative Elements : -23 -69</p><p id="45f2657d-d23e-4446-a7c3-05b335cae325" class="">
+</p><p id="388d3cfc-c768-4fba-aa3c-461abb815e9e" class="">
+</p></li></ol><ol type="1" id="419c4aa3-e548-4961-90a1-186c6fde70d3" class="numbered-list" start="41"><li>Accept size n from user and create a n size array then take n inputs into the and finally
+Print the sum of all elements .  <p id="5968e5fd-8297-4fbf-9544-325d5663de97" class="">Sample Input → n (size of array) : 5      </p><p id="108fc305-7a87-43f3-8240-c942fea954a9" class="">Sample Input → Elements of array  :  1 2 3 4 5</p><p id="12ee7618-d6b7-4959-86a3-9239735cc677" class="">[ Explanation : Sum of all Array Elements ⇒ 1 + 2 + 3 + 4 + 5 = 15 ]                                              </p><p id="25f36786-07fb-4811-b0dd-84389d4e7c7f" class="">Sample Output → Sum of all Array Elements  = 15 </p><p id="aa83f3ca-1c0b-4ebd-b01c-1d3ecf71a747" class="">
+</p></li></ol><ol type="1" id="2973360e-16a5-4de4-86a9-e163451e9301" class="numbered-list" start="42"><li>Write a program to perform Linear Search on an array - If element found print the index else -1<p id="e3cf448b-29df-44da-9117-1a8239b877d8" class="">
+</p><p id="dfb80fc0-329a-46db-9446-cdccadc194f9" class="">Case 1 :<div class="indented"><p id="fc6ec5a8-0687-488d-84f1-47b4559e32bb" class="">Sample Input → n (size of array) : 5                                       </p><p id="6a6f61c2-e41c-4bde-bd46-378d69cec784" class="">Sample Input → Elements of array  :  1 2 3 4 5                </p><p id="0fc9927d-5b30-4d78-bd3f-e17431515ec2" class="">Sample Input → K (Element you wan to search) : 3                                                      </p><p id="dde94ee9-d2e6-4a20-ba04-5722788b1f38" class="">Sample Output → 3 found at 2 index  </p></div></p><p id="66050e8d-ca53-46aa-b4cd-38a98f052ad8" class="">                           </p><p id="85a76a64-622b-4267-acad-785080f22c98" class="">Case 2 :<div class="indented"><p id="ad190373-402f-4f3e-be38-0c23182b6512" class="">Sample Input → n (size of array) : 5</p><p id="f7177a8e-b1ce-412a-8f88-0f645f31fc91" class="">Sample Input → Elements of array  :  1 2 3 4 5</p><p id="e8cad28b-8ac4-4e49-b49d-df1634b6c655" class="">Sample Input → K (Element you wan to search) : 69 </p><p id="9dbb64bd-ffba-47d4-9dc3-4ad73a9fac82" class="">Sample Output → -1   </p><p id="cf3ae626-6173-44a4-b8c5-eae2e904449e" class="">
+</p><p id="76d166f4-8822-4edd-b259-4dc14d2a5f7c" class="">
+</p></div></p></li></ol><ol type="1" id="f06bdcfb-c74c-4ccf-9857-86a9b8a75741" class="numbered-list" start="43"><li>Write a program to perform Binary Search on an array If element found print the index else -1<p id="e0b8a6fa-9d25-4ea6-85a8-a8e0cc2500a9" class="">
+</p><p id="fac67452-4cb3-469c-bd07-72e36349dca3" class="">Case 1 :<div class="indented"><p id="1f692edb-f06f-40cd-a750-f02f779cc2d7" class="">Sample Input → n (size of array) : 5                                       </p><p id="c4f3a420-5a6c-4e9f-90be-80eb5ee6a329" class="">Sample Input → Elements of array  :  1 2 3 4 5                </p><p id="06470b40-7e32-4f9c-9e13-853bd4873fc0" class="">Sample Input → K (Element you want to search) : 5                                                      </p><p id="27e0d333-e3b3-4d5f-86af-fdc159cae8aa" class="">Sample Output → 5 found at 4 index          </p><p id="646bea82-f3bd-44b6-9755-5f62d400aa1e" class="">                   </p></div></p><p id="b6d0f231-df11-438c-835a-daf49d79c5d5" class="">Case 2 :<div class="indented"><p id="828007b7-744a-4cce-acb5-c8557aed5de3" class="">Sample Input → n (size of array) : 5</p><p id="3b0e6d54-2fde-4d15-8c55-b5115761c99c" class="">Sample Input → Elements of array  :  1 2 3 4 5</p><p id="75975299-89fc-4665-8cab-fd989e484fc8" class="">Sample Input → K (Element you want to search) : 69 </p><p id="92f6da16-41e7-4ce9-b637-14f130845f3e" class="">Sample Output → -1   </p></div></p><p id="e3a2b978-0b63-4619-b73b-841a4ccdd758" class="">
+</p><p id="f4e44ca2-1c70-40db-8004-0f1e118e7bd7" class="">
+</p></li></ol><ol type="1" id="5382a71c-7687-4118-bea3-8ccade0b300f" class="numbered-list" start="44"><li>Write a program to perform Bubble sort on an array  <p id="0421aed7-52f9-45a5-9caf-38a42a6dca26" class="">Sample Input → n (size of array) : 8      </p><p id="4eb102df-d143-405b-b98d-24aa8aa940e7" class="">Sample Input → Elements of array  :  5 3 8 4 7 1 2 6</p><p id="376f46a9-d27d-4297-a407-49bd78d54013" class="">Sample Output → Sorted Array : 1 2 3 4 5 6 7 8 </p><p id="d0b4c8ed-07d4-47d4-b98e-0a0e7ccbc80c" class="">
+</p></li></ol><ol type="1" id="fac479e2-353c-4a51-be4c-b5286b0472ea" class="numbered-list" start="45"><li>Write a program of Array left Rotation by 1 element. <p id="98f6411b-9059-4e34-a613-ca121490ae4d" class="">Sample Input →n (size of array) : 5     </p><p id="61cb6fc2-119f-49db-9181-0a68c6b17fdf" class="">Sample Input → Elements of array  :  1 2 3 4 5                                   </p><p id="fe7131c5-4a23-4c4b-b066-273a563c3087" class="">Sample Output → Result ⇒ 2 3 4 5 1</p><p id="4f663a50-bc57-4781-a989-ad3d9db37418" class="">
+</p></li></ol><ol type="1" id="c7bcfd6e-8d19-411a-838d-c116734f8703" class="numbered-list" start="46"><li>Write a program of Array right Rotation by 1 element.<p id="ebe04b1f-b5b2-4010-ba5c-93b03fb2ebd4" class="">Sample Input →n (size of array) : 5     </p><p id="28440694-6011-4fe3-8c1c-ba67971a1f0b" class="">Sample Input → Elements of array  :  1 2 3 4 5                                   </p><p id="155556df-af08-464f-be57-17746cdbe905" class="">Sample Output → Result ⇒ 5 1 2 3 4</p><p id="066524ca-78d4-48e2-8222-6579d27ce53c" class="">
+</p></li></ol><ol type="1" id="36af8ffa-d1bc-4b70-9d5c-9cb44e219a64" class="numbered-list" start="47"><li>Write a program of Array left rotation by K elements.. <p id="bc04c6d5-fc75-44c9-9d43-317657f090d7" class="">Sample Input →n (size of array) : 5     </p><p id="9d935fd9-cf5c-45ff-8a6c-1052a5daaec4" class="">Sample Input → Elements of array  :  1 2 3 4 5</p><p id="28c192e4-b2d6-43e3-b5e8-72d3e0cd2834" class="">Sample Input → K : 3                                     </p><p id="0ca55e5f-20d0-4d83-a10b-28cd7df01baf" class="">Sample Output → Result ⇒ 4 5 1 2 3</p><p id="22be3fb8-6178-4ceb-b736-0ecda58ee917" class="">
+</p></li></ol><ol type="1" id="66facf02-28a9-43e5-aa72-1dd344a46a2c" class="numbered-list" start="48"><li>Write a program of Array right rotation by K elements. <p id="56218a14-4b7c-4e13-9aa8-83eab397b93f" class="">Sample Input →n (size of array) : 5     </p><p id="cc0ca7f9-2e28-4338-bf30-44a177f003a6" class="">Sample Input → Elements of array  :  1 2 3 4 5</p><p id="7d49a4c7-dd7d-4725-aa1f-daa0e8aa134d" class="">Sample Input → K : 3                                     </p><p id="4970a07a-2088-44a6-ab25-a01c472ea263" class="">Sample Output → Result ⇒ 3 4 5 1 2</p><p id="160a36dd-8194-4c98-9283-2ad9a6573e56" class=""> </p></li></ol><ol type="1" id="0697151d-771f-417f-ab57-26b68c877b18" class="numbered-list" start="49"><li>Write a program to check whether the given array is palindrome or not<p id="fbe4a849-d2af-4dea-a053-291592cf8dcc" class="">
+</p><p id="5d785442-321e-41f6-bba0-ce5ea59d39c1" class="">Case 1 : <div class="indented"><p id="c68a1549-9e3d-4776-bad1-4857fc7009a7" class="">Sample Input →n (size of array) : 4                             </p><p id="b0e67945-18ad-432b-86f4-90c1c7da66e3" class="">Sample Input → Elements of array  :  1 2 2 1         </p><p id="32bc925d-d105-4064-9b44-1af07be34ac9" class="">Sample Output → Yes its a Palindromic Array      </p><p id="4c334f8e-e2ac-456d-982f-9c4d2142735a" class="">  </p></div></p><p id="b4c5eac7-b4a2-46eb-b11f-bfe6109e7dae" class="">Case 2 :<div class="indented"><p id="db81736e-b42c-41cf-a3fb-91e63223224c" class="">Sample Input →n (size of array) : 4</p><p id="3367166b-dadf-490d-93aa-d818638e1187" class="">Sample Input → Elements of array  :  1 2 3 4</p><p id="80a6d82c-9577-447a-b9f4-d5a82e980efe" class="">Sample Output → No its not a  Palindromic Array</p></div></p><p id="6a377657-e164-4b92-b331-7ea3ab01f212" class="">
+</p><p id="29388d31-75e7-49f6-b989-a891485b8421" class="">
+</p></li></ol><ol type="1" id="31c0504b-7d7b-43a5-b3d2-5061a1c4ae2e" class="numbered-list" start="50"><li>Write a program  to find the largest element of an array and print its index.<p id="1425b84c-0310-427d-8087-3685e2c519e1" class="">Sample Input →n (size of array) : 5     </p><p id="c0218dde-4e13-4aad-a6f9-a3e2b5977893" class="">Sample Input → Elements of array  :  7 27 12 19 3                                   </p><p id="6ca94a32-4d74-4ec3-b829-9046d5db3a7b" class="">Sample Output → 27 is largest element and its index is 1</p><p id="f6de972a-f6fb-4129-bbac-97664cfa0cee" class=""> </p></li></ol><p id="e8ec3804-306f-44aa-a599-b4c998302899" class="">
+</p><p id="d35cb6f6-9ad7-4e1b-b070-4a5fbac56ec4" class="">
+</p><h1 id="1c0ef73f-bd98-4553-b104-633cca16b0f1" class="">STRING</h1><p id="c49edd76-26d5-4dc2-a06d-448286cbf4eb" class="">
+</p><ol type="1" id="b1a85c2e-ed57-4487-b41e-cc670d7ddbb5" class="numbered-list" start="51"><li>Write a program  to input a string and print it. Also, find its length.<p id="2854c142-d69b-409e-9875-05ea7531f831" class="">Sample Input →String  : “Hello Shery”                           </p><p id="35606bdc-2bc0-4225-9fa3-e236a3460674" class="">Sample Output → String is “Hello Shery” and its length is 11</p><p id="05b683a9-5d6b-4f7c-a4ec-b08d325e6619" class="">
+</p></li></ol><ol type="1" id="a0379887-84d6-4acd-a66a-24d18a0e6cae" class="numbered-list" start="52"><li>Write a program to print the characters of a string in reverse order.<p id="fdd09c43-270f-4508-b0a7-430b48cd3eb8" class="">Sample Input →String  : “adakam”                           </p><p id="34201f99-e9a4-4f6d-ac3f-fe6540a45c05" class="">Sample Output → Result ⇒ “makada”</p><p id="1608c111-911c-4a4c-89b8-e7af67b471dc" class="">
+</p></li></ol><ol type="1" id="ad9f3691-3203-47a4-bd68-ba96dca8bfdf" class="numbered-list" start="53"><li>Write a program  to separate the individual characters from a string. <p id="27ddbcb1-03bf-4bbd-8e18-c4db6705d8e2" class="">Sample Input → String  : “SHERYIANS”                           </p><p id="520e0745-7a03-45ed-bfef-f7d6f0e212c4" class="">Sample Output → S H E R Y I A N S</p><p id="f13947ac-e49a-48d1-a920-5b663d83a2e2" class=""> </p></li></ol><ol type="1" id="e43cfb08-fcb4-4c66-99a6-534aa5bb224b" class="numbered-list" start="54"><li>Write a program to compare two strings if they are identical print (identical) else (not identical)<p id="d1a16dc5-420e-4e2f-a78f-b4c839670496" class="">
+</p><p id="72a626cb-81cf-421a-ac19-d840c7d6bbac" class="">Case 1 :<div class="indented"><p id="75d13339-cd30-4af5-9128-4cfad1a64e55" class="">Sample Input → String 1  : “Labrador lag gaye”                                                 </p><p id="0669293d-fd62-4d33-8f58-29ba905831bc" class="">Sample Input → String 2  : “Labrador lag gaye”                                                  </p><p id="6df03ccb-e3c7-4ace-b62a-25e4d74f013e" class="">Sample Output → Identical   </p><p id="305c146c-7b9b-4ca1-b432-f2f07cb4453a" class="">                                                  </p></div></p><p id="31b044ea-67c1-4dfa-90c8-3cacb75f1762" class="">Case 2 :  <div class="indented"><p id="104c0eee-0d48-404c-97e9-e8ec1a6553b8" class="">Sample Input → String 1  : “Labrador lag gaye” </p><p id="d6e79f1f-9bfa-4dea-9b4c-d844272f09e4" class="">Sample Input → String 2  : “L**de lag gaye”</p><p id="9b011344-d2e9-43ba-a848-d63538d0b524" class="">Sample Output → Not identical</p></div></p><p id="8cb7057b-d4b7-471f-9edb-8553be3fce3e" class=""> </p><p id="632522cb-8795-4b9b-9d20-b7a99ab2f847" class="">
+</p></li></ol><ol type="1" id="bf7fe344-1c3a-4960-a546-ab9ae7348503" class="numbered-list" start="55"><li>Write a program to find maximum occurring character( exclude space ) in a string and print how many time it appeared .<p id="6c75b932-0b2b-439b-a619-a9a77bf42fdc" class="">Sample Input → String  : “Haan Bhoola Main Jahan Main Masti Mein Ghoomun Main Karta Dua Ke Hasti Rahe Tu”                           </p><p id="0d7cef3a-c91f-468d-aaea-7e308d86b068" class="">Sample Output → a is the maximum occurring character which comes 14 times  </p><p id="4f49f49c-5889-438c-8a6d-675b74f80329" class="">
+</p></li></ol><ol type="1" id="6d083ab5-1fbd-42cc-a924-53491a7b985e" class="numbered-list" start="56"><li>Write a program to input two string and add these strings in alternate order like<p id="62b2bd3f-9122-48e2-bf10-b95b0e0da702" class="">Sample Input →String  : “Hello Shery”</p><p id="f37d4d38-ea34-4f88-b562-2e40ad91bd5b" class="">Sample Output → String is “Hello Shery” and its length is 11</p></li></ol><p id="536c35b9-77f4-4f18-a48b-e141be1f198b" class="">
+</p><ol type="1" id="1107ba20-811d-4bd2-8436-2d66de6f63f9" class="numbered-list" start="57"><li>Write a program to check whether string is palindromic or not<p id="903cc82c-0b90-4079-a215-22d182d73840" class="">
+</p><p id="fac2be8d-90c1-44f5-a45b-be9770ad1beb" class="">Case 1 :<div class="indented"><p id="84f3e7ba-1b3a-487a-b3e8-3d1251978b45" class="">Sample Input → String  : “level”                                    </p><p id="2918dbf5-5c75-4c28-9926-772e15d03dd2" class="">Sample Output → Palindromic String    </p><p id="569ab2f7-b508-4be4-838c-883c399ebefa" class="">
+</p></div></p><p id="ae4b0be2-8fba-4ee1-8204-2696e625a44c" class="">Case 2 :<div class="indented"><p id="263f4b02-69d3-4774-b824-d8d5d1fe3d44" class="">Sample Input → String  : “level up”   </p><p id="f7a7b430-c3c1-4881-940a-6c1d8f9134de" class="">Sample Output → Not a Palindromic String </p></div></p><p id="44a867e1-793b-4b1c-9d43-8683abb40e01" class="">
+</p><p id="3b4f8fcd-e4cb-4041-b00e-e3027f48af23" class="">
+</p></li></ol><ol type="1" id="b4685040-8ff8-4b8c-917a-92622943c412" class="numbered-list" start="58"><li>Write a program to remove the spaces from a string<p id="e6056a49-6db3-4a6a-a842-cedc9587e49e" class="">Sample Input → String  : “S H O O R V E E R ”                              </p><p id="ed90383e-cdb0-43de-b4fc-502162de567a" class="">Sample Output → Result ⇒ “SHOORVEER”     </p><p id="f37617d2-31d4-4906-9d54-a4443718fb6d" class="">
+</p><p id="8cb8fadc-b0b5-4a73-ab3f-6a908561fdd0" class="">
+</p></li></ol><ol type="1" id="8bbb5e65-6b33-4f15-a890-8b3eb71dddbf" class="numbered-list" start="59"><li>Write a program to count the total number of alphabets, digits, and special characters in a string... <p id="9f3d5561-8cb8-4415-aaa6-0ec607b5584d" class="">Sample Input → String  : “1 2 ka 4 , 4 2 ka 1 my name is  sheryians”                          </p><p id="787f1972-1515-40a1-8868-5268e85b20d6" class="">Sample Output → Numbers of Alphabets ⇒ 21     </p><p id="29a97b66-eec4-45d8-ac25-2686ac30f97d" class="">Sample Output → Numbers of Digits ⇒ 6 </p><p id="f5bab8a7-c804-400b-aae3-c437c900c6d2" class="">Sample Output → Numbers of Special Characters ⇒ 1 </p><p id="fb3165fc-9c72-4f09-bc37-8075b950e311" class="">
+</p></li></ol><ol type="1" id="44488b92-2697-4a4a-a0d4-4a8242507c93" class="numbered-list" start="60"><li>Write a program to Alternatively Merge two Strings<p id="fa6dce6b-3b67-4bca-8288-7ed53ab963fc" class="">Sample Input → String 1  : “abcde”</p><p id="65273bb0-bc9e-434c-b3e6-60193e7ed61a" class="">Sample Input → String 2  : “pqrst”</p><p id="1b466757-0172-4326-b148-f002768cb526" class="">Sample Output → Result ⇒ “apbqcrdset”                                                      </p></li></ol><p id="6dd7b68b-7f31-4dc9-bb2f-5a962e4ee93a" class="">
+</p><h1 id="943f512b-342d-4284-b519-b494556f4041" class="">Pattern Programming</h1><ol type="1" id="8fa0a9ad-3f47-44ec-8f12-bd0b199ee929" class="numbered-list" start="1"><li>Right Triangle - Star</li></ol><pre id="cdfb8507-845a-4971-b4d4-cdaecad3d4b2" class="code code-wrap"><code>*
+* *
+* * *
+* * * *
+* * * * *</code></pre><ol type="1" id="6c85cf70-86c2-46fa-bbe4-0d1cfca24dd3" class="numbered-list" start="2"><li>Right Triangle - Number</li></ol><pre id="c132da6d-03f6-4744-8a76-fbfa47496418" class="code code-wrap"><code>1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5</code></pre><ol type="1" id="d0711f6c-13a6-4e43-ae61-1ba76fccf9a3" class="numbered-list" start="3"><li>Inverted Right Triangle - Star</li></ol><pre id="eb03844d-0f52-4de8-82db-5cc55c69f444" class="code code-wrap"><code>* * * * *
+* * * *
+* * *
+* *
+*</code></pre><ol type="1" id="54c59a5e-ff09-400b-a062-e014d3a0f125" class="numbered-list" start="4"><li>Mirrored Right Triangle - Star</li></ol><pre id="d7cb1cff-ba37-4add-a252-1a00bc43a2cf" class="code code-wrap"><code>        *
+      * *
+    * * *
+  * * * *
+* * * * *</code></pre><ol type="1" id="58bda208-9931-402f-8f93-d57f73a36d97" class="numbered-list" start="5"><li>Hallow Square - Star</li></ol><pre id="1f067533-2676-4f2e-b194-aa71fba2bbd0" class="code code-wrap"><code>* * * * *
+*       *
+*       *
+*       *
+* * * * *
+</code></pre><p id="ed70d219-570c-4ac9-90bc-54ed7a14e6c4" class="">
+</p></div></article></body></html>
